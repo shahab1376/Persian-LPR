@@ -325,12 +325,12 @@ def ReadPlate(ImageAddress):
     return plates_list[0].Plate,img
     
 
-#dirpath = os.getcwd()
-dirpath = 'E:\Projects\LPR Python'
+dirpath = os.getcwd()
+
 images = []
 plates = []
 with open("Output.txt", "w", encoding="utf-8") as text_file:
-    for ind,file in enumerate(glob.glob(dirpath + '/*.jpg')):
+    for ind,file in enumerate(glob.glob(dirpath + 'images/*.jpg')):
         PlateImage,img = ReadPlate(file)
 
         image = imutils.resize(PlateImage, width=500)
